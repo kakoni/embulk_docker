@@ -4,13 +4,13 @@ ENV EMBULK_HOME /embulk
 
 RUN apt update && apt-get install -y curl netbase \
     && mkdir /embulk \
-    && curl -o /embulk/embulk -L "https://github.com/embulk/embulk/releases/download/v0.10.39/embulk-0.10.39.jar" \
+    && curl -o /embulk/embulk -L "https://github.com/embulk/embulk/releases/download/v0.11.0/embulk-0.11.0.jar" \
     && chmod +x /embulk/embulk \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /embulk/lib \
-    && curl -o /embulk/lib/jruby-complete-9.4.0.0.jar https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.0.0/jruby-complete-9.4.0.0.jar \
-    && echo "jruby=file:///embulk/lib/jruby-complete-9.4.0.0.jar" >> /embulk/embulk.properties
+    && curl -o /embulk/lib/jruby-complete-9.4.3.0.jar https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.3.0/jruby-complete-9.4.3.0.jar \
+    && echo "jruby=file:///embulk/lib/jruby-complete-9.4.3.0.jar" >> /embulk/embulk.properties
 
 # Install plugins if needed
 #RUN java -jar /embulk/embulk gem install \
