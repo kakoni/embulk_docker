@@ -2,7 +2,7 @@
 Running latest embulk using docker
 
 ## Build
-`docker build . -t embulk:0.10.39`
+`docker build . -t embulk:0.11`
 
 ## Run
-`docker run -it --rm embulk:0.10.39 run /conf/loader.yml`
+`docker run -it --rm embulk:0.11 run /conf/loader.yml`
