@@ -12,6 +12,13 @@ RUN mkdir -p /embulk/lib \
     && curl -o /embulk/lib/jruby-complete-9.4.3.0.jar https://repo1.maven.org/maven2/org/jruby/jruby-complete/9.4.3.0/jruby-complete-9.4.3.0.jar \
     && echo "jruby=file:///embulk/lib/jruby-complete-9.4.3.0.jar" >> /embulk/embulk.properties
 
+# Dependencies
+RUN java -jar /embulk/embulk gem install \
+     embulk:0.11.1 \
+     msgpack \
+     bundler \
+     liquid
+    
 # Install plugins if needed
 #RUN java -jar /embulk/embulk gem install \
 #    embulk-output-postgresql \
