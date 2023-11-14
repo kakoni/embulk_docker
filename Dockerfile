@@ -4,7 +4,7 @@ ENV EMBULK_HOME /embulk
 
 RUN apt update && apt-get install -y curl netbase \
     && mkdir /embulk \
-    && curl -o /embulk/embulk -L "https://github.com/embulk/embulk/releases/download/v0.11.0/embulk-0.11.0.jar" \
+    && curl -o /embulk/embulk -L "https://github.com/embulk/embulk/releases/download/v0.11.1/embulk-0.11.1.jar" \
     && chmod +x /embulk/embulk \
     && rm -rf /var/lib/apt/lists/*
 
